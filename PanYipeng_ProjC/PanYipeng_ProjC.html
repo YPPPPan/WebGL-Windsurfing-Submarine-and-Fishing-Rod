@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ProjectC
+    </title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="600" height="600">
+    Please use a browser that supports "canvas"
+    </canvas>
+    <p>
+      <select id="shading" onchange="shaderChange()">
+      <option value = "0">Gouraud shading</option>
+      <option value = "1">Phong shading</option>
+      </select>
+
+      <select id="lighting" onchange="lightChange()">
+      <option value = "0">Phong lighting</option>
+      <option value = "1">Blinn-Phong lighting </option>
+      </select>
+
+      <select id="light1" onchange="lightSwitch1()">
+      <option value = "0">Camera light on</option>
+      <option value = "1">Camera light off</option>
+      </select>
+
+      <select id="light2" onchange="lightSwitch2()">
+      <option value = "0">Fixed light on</option>
+      <option value = "1">Fixed light off</option>
+      </select>
+      <span>Control: WASD/Arrow keys control the camera(Light1); Digit 1-6 control the fixed light(Light2)</span>
+
+      <div>
+        Change the sphere's color! Input between 0 and 1 plz.
+      </div>
+      <div>Ambient R-G-B:
+        <input id="ambientRed" style="width:30px"></input>
+        <input id="ambientGreen" style="width:30px"></input>
+        <input id="ambientBlue" style="width:30px"></input>
+        <button onclick="changeAmbient()">Change ambient</button>
+      </div>
+      <div>Diffuse R-G-B:
+        <input id="diffuseRed" style="width:30px"></input>
+        <input id="diffuseGreen" style="width:30px"></input>
+        <input id="diffuseBlue" style="width:30px"></input>
+        <button onclick="changeDiffuse()">Change diffuse</button>
+      </div>
+      <div>Specular R-G-B of fixed light:
+        <input id="specularRed" style="width:30px"></input>
+        <input id="specularGreen" style="width:30px"></input>
+        <input id="specularBlue" style="width:30px"></input>
+        <button onclick="changeSpecular()">Change specular</button>
+      </div>
+    </p>
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix-quat03.js"></script>
+<!-- YOU SHOULD UPGRADE to Brandon Jones' far-faster, 
+      far more complete vector/matrix/quaternion library: (Google it!)
+		<script src="../lib/glmatrix.js"></script>
+--> 
+		<script src="PanYipeng_VBObox-Lib.js"></script>
+    <script src="PanYipeng_ProjC.js"></script>
+  </body>
+</html>
